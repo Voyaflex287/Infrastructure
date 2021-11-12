@@ -1,0 +1,13 @@
+version: '2'
+services:
+ app:
+  image: nginx
+  container_name: ws1-lucinda.branconet.com
+  volumes:
+   - /media/james/pi-ssd/share_files/Websites/lucinda-art-gallery:/usr/share/nginx/html
+  #  - /media/james/pi-ssd/container-program-files/Websites/webserver1/config:/etc/nginx/conf.d
+  ports:
+   - "8080:80"
+  environment:
+   - NGINX_HOST=lucinda.branconet.com
+   - NGINX_PORT=80

@@ -1,0 +1,13 @@
+version: '2'
+services:
+ app:
+  image: nginx
+  container_name: proxyserver
+  volumes:
+   - /media/james/pi-ssd/share_files/Websites/reverseproxy/sites:/usr/share/nginx/html
+   - /media/james/pi-ssd/container-program-files/Websites/reverseproxy/config:/etc/nginx/conf.d
+  ports:
+   - "80:80"
+  environment:
+   - NGINX_HOST=proxy.branconet.com
+   - NGINX_PORT=80
